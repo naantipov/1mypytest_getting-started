@@ -6,12 +6,8 @@ import pytest
 
 @pytest.fixture
 def browser_configs():
-    browser.config.window_width = 300
-    browser.config.window_height = 300
-    browser.config.browser_name = 'chrome'
-
-    yield
-    browser.quit()
+    browser.config.window_width = 600
+    browser.config.window_height = 800
 
 def test_google_find_selene(browser_configs):
     browser.open('https://google.com')

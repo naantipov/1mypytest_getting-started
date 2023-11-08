@@ -9,7 +9,7 @@ def browser_configs():
     browser.config.window_width = 800
     browser.config.window_height = 800
     yield
-    browser.close()
+    browser.quit()
 
 def test_google_find_selene(browser_configs):
     browser.open('https://google.com')

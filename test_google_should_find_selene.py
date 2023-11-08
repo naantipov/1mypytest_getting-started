@@ -6,12 +6,11 @@ import pytest
 
 @pytest.fixture
 def browser_configs():
-    browser.config.window_width = 600
+    browser.config.window_width = 800
     browser.config.window_height = 800
     yield
-    browser.clear_session_storage()
-    browser.save_screenshot()
     browser.close()
+
 def test_google_find_selene(browser_configs):
     browser.open('https://google.com')
     browser.element('[name="q"]').should(be.blank).type('yashaka/selene').press_enter()
